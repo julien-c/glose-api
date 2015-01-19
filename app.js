@@ -18,7 +18,7 @@ server
   .use(restify.bodyParser())
 
   // Get all pings in the system
-server.get('/ping', function (req, res, next) {
+server.get('/pings', function (req, res, next) {
   // Find every entity within the given collection
   pingSave.find({}, function (error, pings) {
     // Return all of the pings in the system
@@ -51,7 +51,7 @@ server.post('/ping', function (req, res, next) {
 
 
 // Get a single ping by their id
-server.get('/ping/:id', function (req, res, next) {
+server.get('/pings/:id', function (req, res, next) {
   // Find a single ping by their id within save
   pingSave.findOne({ _id: req.params.id }, function (error, ping) {
     // If there are any errors, pass them to next in the correct format
@@ -68,7 +68,7 @@ server.get('/ping/:id', function (req, res, next) {
 
 
 // Get all pings of a user
-server.get('/ping/users/:idUser', function (req, res, next) {
+server.get('/users/:idUser/pings', function (req, res, next) {
   // Find all pings by their idUser within save
   pingSave.find({idUser: req.params.idUser}, function (error, ping){
     // If there are any errors, pass them to next in the correct format
@@ -85,7 +85,7 @@ server.get('/ping/users/:idUser', function (req, res, next) {
 	
 
 // Get all pings of a book
-server.get('/ping/books/:idBook', function (req, res, next) {
+server.get('/books/:idBook/pings', function (req, res, next) {
   // Find all pings by their idBook within save
   pingSave.find({idBook: req.params.idBook}, function (error, ping){
     // If there are any errors, pass them to next in the correct format
