@@ -7,3 +7,6 @@ Le script app.js présenté ici permet la création d'une API sur un serveur loc
 - GET pings by book: récupérer tous les pings d'un livre
 
 En plus, un endpoint 'GET ping: récupérer un ping donné' a été ajouté.
+
+Les pings doivent être entrés sous la forme:
+{idUser = ; idBook = ; progress = ; timestamp = }
