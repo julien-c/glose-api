@@ -69,35 +69,35 @@ server.get('/ping/:id', function (req, res, next) {
 
 // Get all pings of a user
 server.get('/ping/byUser/:idUser', function (req, res, next) {
-	// Find all pings by their idUser within save
-	pingSave.find({idUser: req.params.idUser}, function (error, ping){
-		// If there are any errors, pass them to next in the correct format
-		if (error) return next(new restify.InvalidArgumentError(JSON.stringify(error.errors)))
-		if (ping) {
-			// Send the ping if no issues
-			res.send(ping)
-		} else {
-			// Send 404 header if the user doesn't exist
-			res.send(404)
-		}
-	})
+  // Find all pings by their idUser within save
+  pingSave.find({idUser: req.params.idUser}, function (error, ping){
+    // If there are any errors, pass them to next in the correct format
+    if (error) return next(new restify.InvalidArgumentError(JSON.stringify(error.errors)))
+    if (ping) {
+      // Send the ping if no issues
+      res.send(ping)
+    } else {
+      // Send 404 header if the user doesn't exist
+      res.send(404)
+    }
+  })
 })
 	
 
 // Get all pings of a book
 server.get('/ping/byBook/:idBook', function (req, res, next) {
-	// Find all pings by their idBook within save
-	pingSave.find({idBook: req.params.idBook}, function (error, ping){
-		// If there are any errors, pass them to next in the correct format
-		if (error) return next(new restify.InvalidArgumentError(JSON.stringify(error.errors)))
-		if (ping) {
-			// Send the ping if no issues
-			res.send(ping)
-		} else {
-			// Send 404 header if the user doesn't exist
-			res.send(404)
-		}
-	})
+  // Find all pings by their idBook within save
+  pingSave.find({idBook: req.params.idBook}, function (error, ping){
+    // If there are any errors, pass them to next in the correct format
+    if (error) return next(new restify.InvalidArgumentError(JSON.stringify(error.errors)))
+    if (ping) {
+      // Send the ping if no issues
+      res.send(ping)
+    } else {
+      // Send 404 header if the user doesn't exist
+      res.send(404)
+    }
+  })
 })
 	
 
