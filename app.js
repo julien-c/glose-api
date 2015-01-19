@@ -68,7 +68,7 @@ server.get('/ping/:id', function (req, res, next) {
 
 
 // Get all pings of a user
-server.get('/ping/byUser/:idUser', function (req, res, next) {
+server.get('/ping/users/:idUser', function (req, res, next) {
   // Find all pings by their idUser within save
   pingSave.find({idUser: req.params.idUser}, function (error, ping){
     // If there are any errors, pass them to next in the correct format
@@ -85,7 +85,7 @@ server.get('/ping/byUser/:idUser', function (req, res, next) {
 	
 
 // Get all pings of a book
-server.get('/ping/byBook/:idBook', function (req, res, next) {
+server.get('/ping/books/:idBook', function (req, res, next) {
   // Find all pings by their idBook within save
   pingSave.find({idBook: req.params.idBook}, function (error, ping){
     // If there are any errors, pass them to next in the correct format
