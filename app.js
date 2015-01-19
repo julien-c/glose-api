@@ -28,7 +28,7 @@ server.get('/pings', function (req, res, next) {
 
 
 // Create a new ping
-server.post('/ping', function (req, res, next) {
+server.post('/pings', function (req, res, next) {
   // Make sure name is defined
   if (req.params.idUser === undefined) {
     // If there are any errors, pass them to next in the correct format
